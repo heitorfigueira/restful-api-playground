@@ -5,6 +5,7 @@ using ResftulApiPlayground.Entities;
 using ResftulApiPlayground.Exceptions;
 using ResftulApiPlayground.Models.DTO;
 using ResftulApiPlayground.Service;
+using RestfulApiPlayground.Models.DTO;
 using System;
 
 namespace ResftulApiPlayground.Controllers;
@@ -28,12 +29,14 @@ public class RecipesController : ControllerBase
     {
         try
         {
+            // TODO: Retirar essa lógica de negócio da camada de apresentação da aplicação!!!!
             int id = Decode(hashid);
                 
             Recipe recipe = repo.GetById(id);
 
             return Ok(recipe);
-
+            
+            // TODO: Também é lógica de negócio, mas é melhor encapsular essas mensagens nas próprias exceções
         } catch (InvalidArgumentException iaex)
         {
             return BadRequest("Argumento inválido, por favor forneça um id válido.");
@@ -55,6 +58,7 @@ public class RecipesController : ControllerBase
     {
         try
         {
+            // TODO: Retirar essa lógica de negócio da camada de apresentação da aplicação!!!!
             // TODO: Criar mapeador
             Recipe recipe = new()
             {
@@ -114,6 +118,20 @@ public class RecipesController : ControllerBase
         catch (IdNotFoundException infex)
         {
             return NotFound("Nenhuma receita foi encontrada com esse id.");
+        }
+    }
+
+    [HttpPut]
+    public IActionResult UpdateRecipe([FromBody] UpdateRecipePayload payload)
+    {
+        try
+        {
+
+
+
+        } catch (Exception ex)
+        {
+
         }
     }
 
