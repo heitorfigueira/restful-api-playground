@@ -17,7 +17,7 @@ namespace RestfulApiPlaygroundTests
 {
     public class RecipeEndpointTests
     {
-        private RecipeController _repo;
+        private RecipesController _repo;
 
         [Fact]
         public void GetRecipeById_WithExistingRecipe_ReturnsRecipe()
@@ -36,7 +36,7 @@ namespace RestfulApiPlaygroundTests
             var repository = new Mock<IRecipeRepository>();
             repository.Setup(repo => repo.GetById(It.IsAny<int>())).Returns(recipe);
 
-            _repo = new RecipeController(hashids, repository.Object);
+            _repo = new RecipesController(hashids, repository.Object);
             var hashid = _repo.hashids.Encode(recipe.Id);
 
             OkObjectResult result = new(recipe);
