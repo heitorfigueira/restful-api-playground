@@ -13,13 +13,13 @@ namespace ResftulApiPlayground.Controllers;
 [ApiController]
 public class RecipeController : ControllerBase
 {
-    private readonly IHashids _hashids;
-    private readonly RecipeRepository _repo;
+    public readonly IHashids hashids;
+    public readonly IRecipeRepository repo;
 
-    public RecipeController(IHashids hashids, RecipeRepository repo)
+    public RecipeController(IHashids hashids, IRecipeRepository repo)
     {
-        _hashids = hashids;
-        _repo = repo;
+        this.hashids = hashids;
+        this.repo = repo;
     }
 
     [HttpGet]
@@ -30,7 +30,7 @@ public class RecipeController : ControllerBase
         {
             int id = Decode(hashid);
                 
-            Recipe recipe = _repo.GetById(id);
+            Recipe recipe = repo.GetById(id);
 
             return Ok(recipe);
 
@@ -61,10 +61,10 @@ public class RecipeController : ControllerBase
                 Name = payload.Name,
                 Description = payload.Description,
                 Ingredients = payload.Ingredients,
-                DateIncluded = DateTime.Now
+                IncludedAt = DateTime.Now
             };
 
-            int id = _repo.InsertRecipe(recipe);
+            int id = repo.InsertRecipe(recipe);
             string hashid = Encode(id);
 
             return Ok(hashid);
@@ -94,7 +94,7 @@ public class RecipeController : ControllerBase
         {
             int id = Decode(hashid);
 
-            Recipe recipe = _repo.DeleteById(id);
+            Recipe recipe = repo.DeleteById(id);
 
             return Ok(recipe);
 
@@ -124,7 +124,7 @@ public class RecipeController : ControllerBase
             throw new ArgumentNullException();
 
         int id;
-        if (_hashids.TryDecodeSingle(hashid, out id))
+        if (hashids.TryDecodeSingle(hashid, out id))
             return id;
         else
             throw new InvalidArgumentException();
@@ -135,6 +135,6 @@ public class RecipeController : ControllerBase
         if (id == 0)
             throw new InvalidArgumentException();
 
-        return _hashids.Encode(id);
+        return hashids.Encode(id);
     }
 }

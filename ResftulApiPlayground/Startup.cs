@@ -33,7 +33,7 @@ namespace ResftulApiPlayground
 
             services.AddSingleton<IHashids>(_ => new Hashids("configurar"));
 
-            services.AddSingleton<RecipeRepository>();
+            services.AddSingleton<IRecipeRepository, RecipeDictionaryRepository>();
 
             services.AddSwaggerGen(c =>
             {

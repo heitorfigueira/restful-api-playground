@@ -10,6 +10,6 @@ namespace ResftulApiPlayground.Entities
         public string Name { get; set; }
         public string Description { get; set; }
         public string Ingredients { get; set; }
-        public DateTime DateIncluded { get; set; }
+        public DateTime IncludedAt { get; set; }
     }
 }

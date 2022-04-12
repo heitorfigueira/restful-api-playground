@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 namespace ResftulApiPlayground.Service;
 
-public class RecipeRepository
+public class RecipeDictionaryRepository : IRecipeRepository
 {
     private Dictionary<int, Recipe> _recipes { get; set; }
 
-    public RecipeRepository()
+    public RecipeDictionaryRepository()
     {
         _recipes = new Dictionary<int, Recipe>();
     }
