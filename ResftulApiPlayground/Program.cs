@@ -6,8 +6,8 @@ using HashidsNet;
 using ResftulApiPlayground.Service;
 using Microsoft.OpenApi.Models;
 
-var builder = WebApplication.CreateBuilder(args);
-var services = builder.Services;
+WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+IServiceCollection services = builder.Services;
 
 services.AddControllers();
 

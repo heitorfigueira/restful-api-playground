@@ -19,10 +19,10 @@ public class RecipeDictionaryRepository : IRecipeRepository
         if (_recipes.TryGetValue(id, out recipe))
             return recipe;
         else
-            throw new IdNotFoundException();
+            throw new IdNotFoundError();
     }
 
-    public int InsertRecipe(Recipe recipe)
+    public int Insert(Recipe recipe)
     {
         var newId = _recipes.Count + 1;
 
@@ -34,25 +34,25 @@ public class RecipeDictionaryRepository : IRecipeRepository
 
     public Recipe DeleteById(int id)
     {
-        Recipe recipe;
-        if (_recipes.TryGetValue(id, out recipe))
+        Recipe removedRecipe;
+        if (_recipes.TryGetValue(id, out removedRecipe))
             _recipes.Remove(id);
         else
-            throw new IdNotFoundException();
+            throw new IdNotFoundError();
 
-        return recipe;
+        return removedRecipe;
     }
 
-    public Recipe Update(Recipe newRecipe)
+    public Recipe Update(Recipe updatedRecipe)
     {
-        Recipe recipe;
-        if (_recipes.TryGetValue(newRecipe.Id, out recipe))
-            _recipes.Remove(newRecipe.Id);
+        Recipe oldRecipe;
+        if (_recipes.TryGetValue(updatedRecipe.Id, out oldRecipe))
+            _recipes.Remove(updatedRecipe.Id);
         else
-            throw new IdNotFoundException();
+            throw new IdNotFoundError();
 
-        _recipes.Add(newRecipe.Id, newRecipe);
+        _recipes.Add(updatedRecipe.Id, updatedRecipe);
 
-        return recipe;
+        return oldRecipe;
     }
 }

@@ -5,6 +5,7 @@ using Moq;
 using ResftulApiPlayground.Controllers;
 using ResftulApiPlayground.Entities;
 using ResftulApiPlayground.Service;
+using RestfulApiPlayground.Infrastructure.Presentation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,8 +37,8 @@ namespace RestfulApiPlaygroundTests
             var repository = new Mock<IRecipeRepository>();
             repository.Setup(repo => repo.GetById(It.IsAny<int>())).Returns(recipe);
 
-            _repo = new RecipesController(hashids, repository.Object);
-            var hashid = _repo.hashids.Encode(recipe.Id);
+            _repo = new RecipesController(repository.Object);
+            var hashid = IdScrambler.Encode(recipe.Id);
 
             OkObjectResult result = new(recipe);
 

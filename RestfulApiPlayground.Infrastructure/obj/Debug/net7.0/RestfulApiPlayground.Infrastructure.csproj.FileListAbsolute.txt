@@ -1,0 +1,12 @@
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlayground.Infrastructure\bin\Debug\net7.0\RestfulApiPlayground.Infrastructure.deps.json
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlayground.Infrastructure\bin\Debug\net7.0\RestfulApiPlayground.Infrastructure.dll
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlayground.Infrastructure\bin\Debug\net7.0\RestfulApiPlayground.Infrastructure.pdb
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlayground.Infrastructure\obj\Debug\net7.0\RestfulApiPlayground.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlayground.Infrastructure\obj\Debug\net7.0\RestfulApiPlayground.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlayground.Infrastructure\obj\Debug\net7.0\RestfulApiPlayground.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlayground.Infrastructure\obj\Debug\net7.0\RestfulApiPlayground.Infrastructure.AssemblyInfo.cs
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlayground.Infrastructure\obj\Debug\net7.0\RestfulApiPlayground.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlayground.Infrastructure\obj\Debug\net7.0\RestfulApiPlayground.Infrastructure.dll
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlayground.Infrastructure\obj\Debug\net7.0\refint\RestfulApiPlayground.Infrastructure.dll
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlayground.Infrastructure\obj\Debug\net7.0\RestfulApiPlayground.Infrastructure.pdb
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlayground.Infrastructure\obj\Debug\net7.0\ref\RestfulApiPlayground.Infrastructure.dll

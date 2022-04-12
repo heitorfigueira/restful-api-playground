@@ -1,10 +1,11 @@
 ﻿using HashidsNet;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ResftulApiPlayground.Entities;
 using ResftulApiPlayground.Exceptions;
 using ResftulApiPlayground.Models.DTO;
 using ResftulApiPlayground.Service;
+using RestfulApiPlayground.Infrastructure.Presentation;
+using RestfulApiPlayground.Infrastructure.Presentation.Errors;
 using RestfulApiPlayground.Models.DTO;
 using System;
 
@@ -14,12 +15,10 @@ namespace ResftulApiPlayground.Controllers;
 [ApiController]
 public class RecipesController : ControllerBase
 {
-    public readonly IHashids hashids;
     public readonly IRecipeRepository repo;
 
-    public RecipesController(IHashids hashids, IRecipeRepository repo)
+    public RecipesController(IRecipeRepository repo)
     {
-        this.hashids = hashids;
         this.repo = repo;
     }
 
@@ -29,27 +28,16 @@ public class RecipesController : ControllerBase
     {
         try
         {
-            // TODO: Retirar essa lógica de negócio da camada de apresentação da aplicação!!!!
-            int id = Decode(hashid);
+            int id = IdScrambler.Decode(hashid);
                 
             Recipe recipe = repo.GetById(id);
 
             return Ok(recipe);
-            
-            // TODO: Também é lógica de negócio, mas é melhor encapsular essas mensagens nas próprias exceções
-        } catch (InvalidArgumentException iaex)
-        {
-            return BadRequest("Argumento inválido, por favor forneça um id válido.");
 
-            // TODO: Logar a exception
-        } catch (ArgumentNullException anex)
+        }
+        catch (ErrorException ex)
         {
-            return BadRequest("Argumento nulo, por favor forneça um id válido.");
-
-            // TODO: Logar a exception
-        } catch (IdNotFoundException infex)
-        {
-            return NotFound("Nenhuma receita foi encontrada com esse id.");
+            return (IActionResult) ex.callback.DynamicInvoke();
         }
     }
 
@@ -58,7 +46,6 @@ public class RecipesController : ControllerBase
     {
         try
         {
-            // TODO: Retirar essa lógica de negócio da camada de apresentação da aplicação!!!!
             // TODO: Criar mapeador
             Recipe recipe = new()
             {
@@ -68,26 +55,14 @@ public class RecipesController : ControllerBase
                 IncludedAt = DateTime.Now
             };
 
-            int id = repo.InsertRecipe(recipe);
-            string hashid = Encode(id);
+            int id = repo.Insert(recipe);
+            string hashid = IdScrambler.Encode(id);
 
             return Ok(hashid);
         }
-        catch (InvalidArgumentException iaex)
+        catch (ErrorException ex)
         {
-            return BadRequest("Argumento inválido, por favor forneça um id válido.");
-
-            // TODO: Logar a exception
-        }
-        catch (ArgumentNullException anex)
-        {
-            return BadRequest("Argumento nulo, por favor forneça um id válido.");
-
-            // TODO: Logar a exception
-        }
-        catch (IdNotFoundException infex)
-        {
-            return NotFound("Nenhuma receita foi encontrada com esse id.");
+            return (IActionResult) ex.callback.DynamicInvoke();
         }
     }
 
@@ -96,28 +71,16 @@ public class RecipesController : ControllerBase
     {
         try
         {
-            int id = Decode(hashid);
+            int id = IdScrambler.Decode(hashid);
 
             Recipe recipe = repo.DeleteById(id);
 
             return Ok(recipe);
 
         }
-        catch (InvalidArgumentException iaex)
+        catch (ErrorException ex)
         {
-            return BadRequest("Argumento inválido, por favor forneça um id válido.");
-
-            // TODO: Logar a exception
-        }
-        catch (ArgumentNullException anex)
-        {
-            return BadRequest("Argumento nulo, por favor forneça um id válido.");
-
-            // TODO: Logar a exception
-        }
-        catch (IdNotFoundException infex)
-        {
-            return NotFound("Nenhuma receita foi encontrada com esse id.");
+            return (IActionResult) ex.callback.DynamicInvoke();
         }
     }
 
@@ -126,33 +89,20 @@ public class RecipesController : ControllerBase
     {
         try
         {
+            Recipe recipe = new()
+            {
+                Id = IdScrambler.Decode(payload.Id),
+                Name = payload.Name,
+                Description = payload.Description,
+                Ingredients = payload.Ingredients
+            };
 
+            Recipe oldRecipe = repo.Update(recipe);
 
-
-        } catch (Exception ex)
+            return Ok(oldRecipe);
+        } catch (ErrorException ex)
         {
-
+            return (IActionResult) ex.callback.DynamicInvoke();
         }
-    }
-
-
-    private int Decode(string hashid)
-    {
-        if (string.IsNullOrEmpty(hashid))
-            throw new ArgumentNullException();
-
-        int id;
-        if (hashids.TryDecodeSingle(hashid, out id))
-            return id;
-        else
-            throw new InvalidArgumentException();
-    }
-
-    private string Encode(int id)
-    {
-        if (id == 0)
-            throw new InvalidArgumentException();
-
-        return hashids.Encode(id);
     }
 }

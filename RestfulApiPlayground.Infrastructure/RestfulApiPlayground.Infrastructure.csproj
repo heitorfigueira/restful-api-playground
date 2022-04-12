@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Application\Exceptions\" />
+    <Folder Include="Application\Endpoints\" />
+    <Folder Include="Application\Entities\" />
+    <Folder Include="Application\Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Hashids.net" Version="1.5.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+  </ItemGroup>
+
+</Project>
