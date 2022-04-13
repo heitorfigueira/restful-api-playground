@@ -3,13 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using ResftulApiPlayground.Entities;
 using ResftulApiPlayground.Exceptions;
 using ResftulApiPlayground.Models.DTO;
-using ResftulApiPlayground.Service;
 using RestfulApiPlayground.Infrastructure.Presentation;
 using RestfulApiPlayground.Infrastructure.Presentation.Errors;
 using RestfulApiPlayground.Models.DTO;
+using RestfulApiPlayground.src.Application.Contracts;
 using System;
 
-namespace ResftulApiPlayground.Controllers;
+namespace RestfulApiPlayground.src.Presentation;
 
 [Route("api/[controller]")]
 [ApiController]
@@ -29,7 +29,7 @@ public class RecipesController : ControllerBase
         try
         {
             int id = IdScrambler.Decode(hashid);
-                
+
             Recipe recipe = repo.GetById(id);
 
             return Ok(recipe);
@@ -37,7 +37,7 @@ public class RecipesController : ControllerBase
         }
         catch (ErrorException ex)
         {
-            return (IActionResult) ex.callback.DynamicInvoke();
+            return ex.Callback();
         }
     }
 
@@ -62,7 +62,7 @@ public class RecipesController : ControllerBase
         }
         catch (ErrorException ex)
         {
-            return (IActionResult) ex.callback.DynamicInvoke();
+            return ex.Callback();
         }
     }
 
@@ -80,7 +80,7 @@ public class RecipesController : ControllerBase
         }
         catch (ErrorException ex)
         {
-            return (IActionResult) ex.callback.DynamicInvoke();
+            return ex.Callback();
         }
     }
 
@@ -100,9 +100,10 @@ public class RecipesController : ControllerBase
             Recipe oldRecipe = repo.Update(recipe);
 
             return Ok(oldRecipe);
-        } catch (ErrorException ex)
+        }
+        catch (ErrorException ex)
         {
-            return (IActionResult) ex.callback.DynamicInvoke();
+            return ex.Callback();
         }
     }
 }

@@ -5,32 +5,39 @@ using Microsoft.AspNetCore.Builder;
 using HashidsNet;
 using ResftulApiPlayground.Service;
 using Microsoft.OpenApi.Models;
+using RestfulApiPlayground.src.Application.Contracts;
+using RestfulApiPlayground.Infrastructure.Application.Middleware;
+using Serilog;
+using RestfulApiPlayground.Infrastructure.Application.Middleware.Interceptors;
+using RestfulApiPlayground.Infrastructure.Application.Middleware.Installers;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+
 IServiceCollection services = builder.Services;
 
-services.AddControllers();
+Log.Logger = new LoggerConfiguration()
+                    .WriteTo.Console()
+                    .WriteTo.File("log.txt")
+                    .MinimumLevel.Debug()
+                    .CreateLogger();
+
+services.AddInstallersFromAssemblyContaining<IInstaller>(builder.Configuration);
 
 services.AddSingleton<IHashids>(_ => new Hashids("configurar"));
-
 services.AddSingleton<IRecipeRepository, RecipeDictionaryRepository>();
 
-services.AddRouting(options => options.LowercaseUrls = true);
-services.AddEndpointsApiExplorer();
-services.AddSwaggerGen(c =>
-{
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "ResftulApiPlayground", Version = "v1" });
-});
-
 var app = builder.Build();
+
+app.AddMiddlewareInstallersFromAssemblyContaining<IMiddlewareInstaller>();
+app.AddInterceptorsFromAssemblyContaining<IInterceptor>();
 
 if (app.Environment.IsDevelopment() ||
     app.Environment.IsStaging())
 {
     app.UseDeveloperExceptionPage();
-    app.UseSwagger(options => options.SerializeAsV2 = true);
-    app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "ResftulApiPlayground v1"));
 }
+
 
 app.UseHttpsRedirection();
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,7 +9,7 @@ namespace RestfulApiPlayground.Infrastructure.Presentation.Errors;
 
 public class ErrorException : Exception
 {
-    public Delegate callback { get; init; }
+    private Delegate callback { get; init; }
 
     public string message { get; init; }
 
@@ -24,5 +25,10 @@ public class ErrorException : Exception
     {
         this.callback = callback;
         this.message = message;
+    }
+
+    public IActionResult Callback()
+    {
+        return (IActionResult) this.callback.DynamicInvoke()!;
     }
 }

@@ -98,6 +98,11 @@ C:\Users\heito\Personal\Projects\C#\resful-api-playground\ResftulApiPlayground\R
 C:\Users\heito\Personal\Projects\C#\resful-api-playground\ResftulApiPlayground\RestfulApiPlaygroundTests\obj\Debug\net7.0\RestfulApiPlaygroundTests.genruntimeconfig.cache
 C:\Users\heito\Personal\Projects\C#\resful-api-playground\ResftulApiPlayground\RestfulApiPlaygroundTests\obj\Debug\net7.0\ref\RestfulApiPlaygroundTests.dll
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\CoverletSourceRootsMapping
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\obj\Debug\net7.0\RestfulApiPlaygroundTests.csproj.AssemblyReference.cache
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\obj\Debug\net7.0\RestfulApiPlaygroundTests.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\obj\Debug\net7.0\RestfulApiPlaygroundTests.AssemblyInfoInputs.cache
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\obj\Debug\net7.0\RestfulApiPlaygroundTests.AssemblyInfo.cs
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\obj\Debug\net7.0\RestfulApiPlaygroundTests.csproj.CoreCompileInputs.cache
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\testhost.dll
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\RestfulApiPlayground.deps.json
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\RestfulApiPlayground.runtimeconfig.json
@@ -116,6 +121,8 @@ C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundT
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\Castle.Core.dll
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\FluentAssertions.dll
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\Hashids.net.dll
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\Mapster.dll
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\Mapster.Core.dll
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\Microsoft.AspNetCore.Razor.Language.dll
@@ -136,6 +143,9 @@ C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundT
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\Newtonsoft.Json.dll
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\NuGet.Frameworks.dll
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\Serilog.dll
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\Serilog.Sinks.Console.dll
+C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\Serilog.Sinks.File.dll
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -216,11 +226,6 @@ C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundT
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\RestfulApiPlayground.Infrastructure.dll
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\RestfulApiPlayground.pdb
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\bin\Debug\net7.0\RestfulApiPlayground.Infrastructure.pdb
-C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\obj\Debug\net7.0\RestfulApiPlaygroundTests.csproj.AssemblyReference.cache
-C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\obj\Debug\net7.0\RestfulApiPlaygroundTests.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\obj\Debug\net7.0\RestfulApiPlaygroundTests.AssemblyInfoInputs.cache
-C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\obj\Debug\net7.0\RestfulApiPlaygroundTests.AssemblyInfo.cs
-C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\obj\Debug\net7.0\RestfulApiPlaygroundTests.csproj.CoreCompileInputs.cache
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\obj\Debug\net7.0\RestfulApiPlaygroundTests.csproj.CopyComplete
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\obj\Debug\net7.0\RestfulApiPlaygroundTests.dll
 C:\Users\heito\Personal\Projects\C#\restful-api-playground\RestfulApiPlaygroundTests\obj\Debug\net7.0\refint\RestfulApiPlaygroundTests.dll

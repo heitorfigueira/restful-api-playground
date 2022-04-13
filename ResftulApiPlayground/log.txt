@@ -1,0 +1,2 @@
+2022-04-12 21:57:31.806 -03:00 [DBG] Método POST, Query  e Path /api/recipes
+2022-04-12 21:57:31.919 -03:00 [DBG] Status Code 200 e Body Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpResponseStream

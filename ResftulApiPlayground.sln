@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.2.32317.152
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestfulApiPlayground", "ResftulApiPlayground\RestfulApiPlayground.csproj", "{977F2975-94C9-4258-B976-5016A86C62CF}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestfulApiPlaygroundTests", "RestfulApiPlaygroundTests\RestfulApiPlaygroundTests.csproj", "{35F1D45E-EF97-4628-80E1-AED54B98BA96}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestfulApiPlayground.Infrastructure", "RestfulApiPlayground.Infrastructure\RestfulApiPlayground.Infrastructure.csproj", "{87FCC135-2BDE-46DE-9458-88F0BF2F4A54}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestfulApiPlayground.Infrastructure", "RestfulApiPlayground.Infrastructure\RestfulApiPlayground.Infrastructure.csproj", "{87FCC135-2BDE-46DE-9458-88F0BF2F4A54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

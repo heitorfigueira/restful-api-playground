@@ -2,10 +2,10 @@
 using HashidsNet;
 using Microsoft.AspNetCore.Mvc;
 using Moq;
-using ResftulApiPlayground.Controllers;
 using ResftulApiPlayground.Entities;
-using ResftulApiPlayground.Service;
 using RestfulApiPlayground.Infrastructure.Presentation;
+using RestfulApiPlayground.src.Application.Contracts;
+using RestfulApiPlayground.src.Presentation;
 using System;
 using System.Collections.Generic;
 using System.Linq;

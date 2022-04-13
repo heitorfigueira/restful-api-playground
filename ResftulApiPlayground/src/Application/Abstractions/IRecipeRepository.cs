@@ -1,6 +1,6 @@
 ﻿using ResftulApiPlayground.Entities;
 
-namespace ResftulApiPlayground.Service
+namespace RestfulApiPlayground.src.Application.Contracts
 {
     public interface IRecipeRepository
     {
